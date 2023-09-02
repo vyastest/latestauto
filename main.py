@@ -6,9 +6,10 @@ data = {
     "Color": ["Red", "Yellow", "Red", "Brown", "Purple", "Purple", "Brown"]
 }
 
-df = pd.DataFrame(data)
+df=pd.read_csv("teststream.csv")
+unique_players = df["striker"].unique()
 
-selection = st.selectbox("Select an option:", df["Fruit"], key="dropdown")
+selection = st.selectbox("Select an option:", unique_players, key="dropdown")
 
 if selection:
     filtered_df = df[df["Fruit"] == selection]
