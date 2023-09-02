@@ -12,7 +12,7 @@ unique_players = df["striker"].unique()
 selection = st.selectbox("Select an option:", unique_players, key="dropdown")
 
 if selection:
-    filtered_df = df[df["Fruit"] == selection]
+    filtered_df = df[df["striker"] == selection]
 
     st.write("Filtered Data:")
     st.write(filtered_df)
